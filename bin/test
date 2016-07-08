@@ -1,0 +1,6 @@
+#!/bin/sh
+bundle exec rake sunspot:solr:start RAILS_ENV=test
+bundle exec rspec "$@"
+code=$?;
+bundle exec rake sunspot:solr:stop RAILS_ENV=test
+exit $code
