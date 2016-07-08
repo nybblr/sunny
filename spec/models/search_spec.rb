@@ -11,6 +11,10 @@ describe Search do
   # Force user creation
   let!(:data) { users }
 
+  before do
+    Sunspot.commit
+  end
+
   describe 'searching for users' do
     subject(:results) { search.users }
     context 'when searching by location' do
