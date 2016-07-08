@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Search do
+describe Search, search: true do
   subject(:search) { Search.new(query) }
 
   let(:alice) { User.create(name: 'Alice', location: 'Anchorage') }
